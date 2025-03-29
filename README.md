@@ -7,3 +7,6 @@
 
 ## 🎮 InGame Video
 [![InGame Video](https://img.youtube.com/vi/JnEQsDqwAv0/0.jpg)](https://youtu.be/JnEQsDqwAv0)
+
+## 📥 Final Deliverable
+You can download the final deliverable from the following link: [Download Final Deliverable](https://bit.ly/CosmicDriftVR)
