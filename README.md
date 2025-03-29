@@ -19,7 +19,10 @@
 ### 💻 Development Tools
 - **Code Editor** : Visual Studio
 - **3D Modeling & Animations** : Blender
-- **Networking** : Photon 
+- **Networking** : Photon
+
+## 🏗️ System Architecture
+
 
 ## 📄 Documents
 - [CosmicDriftVR Project Plan](./CosmicDriftVR_PDF/CosmicDriftVR.pdf)
