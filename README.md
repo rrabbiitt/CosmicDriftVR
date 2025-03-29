@@ -1,3 +1,3 @@
 # CosmicDriftVR
- [![CosmicDriftVR Trailer]](https://youtu.be/JnEQsDqwAv0)
+ [[CosmicDriftVR Trailer]](https://youtu.be/JnEQsDqwAv0)
 
