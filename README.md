@@ -143,7 +143,7 @@
 ## 📄 Documents
 - [Technical Report](./CosmicDriftVR_PDF/CosmicDriftVR_기술보고서.pdf)
 
-## 🎮 InGame Video
+## 🎮 In-Game Trailer Footage
 [![InGame Video](https://img.youtube.com/vi/JnEQsDqwAv0/0.jpg)](https://youtu.be/JnEQsDqwAv0)
 
 ## 📥 Final Deliverable
