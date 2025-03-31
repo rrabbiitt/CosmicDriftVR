@@ -138,7 +138,7 @@
   </ul>
 </details>
 
-## 🔥 Troubleshooting
+## 💣 Troubleshooting
 
 ## 📄 Documents
 - [Technical Report](./CosmicDriftVR_PDF/CosmicDriftVR_기술보고서.pdf)
