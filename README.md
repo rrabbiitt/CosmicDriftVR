@@ -6,6 +6,8 @@
 `Cosmic Drift VR` is a hyper-casual genre party multiplayer game set in a fantastic space-themed environment, based on Meta Quest. Up to 4 players transform into space treasure hunters and compete in unique mini-game leagues across various planets.
 ### Project Objective
 `Cosmic Drift VR` is a project that started with the desire to create the most approachable game to enjoy with friends, where you can jump right in without any preparation, much like sharing a bag of potato chips with the closest people when you want to spend a fun time together.
+### My Role
+As a **Client Developer** in the `Cosmic Drift VR` project, I was responsible for designing and developing VR game scenes, including scene setup, scene connection, and environment design. I also handled core **VR interactions** such as integrating VR controllers, developing the **VR UI/UX** and programming **player interactions**. Later, I collaborated with the **server developer** to ensure smooth communication and integration between the client and server.
 
 ## 🛠️ Stacks
 ### 🌍 Environment
