@@ -139,7 +139,6 @@
 </details>
 
 ## 💣 Troubleshooting
-
 ---
 ### 1️⃣ **VR Swimming Feature Implementation Issue**
 
@@ -197,6 +196,57 @@ To solve the issue, the focus shifted to **optimizing the interaction between in
 ### **Conclusion**
 ---
 By combining **InputActionReference** for more accurate input tracking and optimizing the force application with Unity's physics engine, the issue of **input sensitivity** and **inconsistent movement** was resolved. The final implementation now provides a **smooth and responsive swimming experience** in VR, with **natural resistance** modeled by drag force. This solution creates a more immersive and comfortable swimming mechanic for users.
+
+---
+---
+### 2️⃣ **Controller Collision Issue in Photon Server Integration**
+
+During the development of the game, the game was initially created and the server was connected later. The server and development teams worked separately, which led to issues when multiple players joined the game. Specifically, **controller collisions** occurred, where players’ controllers interacted with each other, even when not being actively controlled by the player. This resulted in **unintended controller interactions**.
+
+#### **Root Cause Analysis**
+---
+
+- **Controller Collision Cause**:  
+  The primary cause of the issue was that **controller data (input, position, etc.)** was not correctly assigned to each player. This caused the controller to appear as though it was being manipulated by a different player.  
+  The issue mainly arose because, in a networked environment (such as with **Photon**), incorrect **network ownership** of objects (like controllers) could lead to one player's input affecting another player's controller.
+
+- **Object Ownership Management**:  
+  Proper management of object ownership is crucial in multiplayer games to ensure that each player only controls their own assigned objects. In **Photon**, the **PhotonView** component is used to assign the ownership of an object to a specific player. If ownership is incorrectly assigned, another player's input may be transmitted to the wrong controller.
+
+---
+### **Solution Approach**
+---
+
+To resolve the controller collision issue, several steps were taken:
+
+1. **Correct PhotonView Ownership Assignment**:  
+   Each player should only have control over their own controller. We used **PhotonView** to ensure the ownership of the controllers was correctly assigned to the player interacting with them.
+   In the provided code, the `photonView.RPC()` method was used to synchronize actions across the network. This ensures that when a player shoots, the action is replicated across all clients.
+     ```csharp
+     protected virtual void StartShooting(XRBaseInteractor interactor) {
+       photonView.RPC("ShootRPC", RpcTarget.All);
+     }
+
+     [PunRPC]
+     private void ShootRPC() {
+       Shoot();
+     }
+    ```
+   This allows the **shooting action** to be synchronized across all clients. By using **RPCs (Remote Procedure Calls)**, the shooting event is triggered on all connected clients simultaneously, ensuring that every player sees the same behavior in real-time.
+
+2. **Object Synchronization Using Photon**:  
+   Photon’s **RPC** system helps synchronize actions between clients, ensuring that **controller actions** (like shooting or grabbing the weapon) are shared across all players in the game. The `ShootRPC` method is an example of how actions performed by one player are transmitted to other players.  
+  Additionally, **PhotonTransformView** or similar components should be used to synchronize positions or states of objects (like controllers) across the network, so that players can see consistent movement and interaction.
+
+3. **Preventing Conflicting Controller Interactions**:  
+   To prevent multiple players from controlling the same object, additional validation logic was added. For example, when one player is interacting with a controller, the ownership check ensures that no other player can interact with that controller at the same time.  
+  If the **PhotonView** ownership is correctly assigned, only the player who owns the controller will be able to interact with it. This ensures no conflict arises between players trying to manipulate the same object at once.
+
+---
+### **Conclusion**
+---
+By correctly managing **PhotonView ownership**, using **RPCs** to synchronize actions, and ensuring that controllers are assigned to the correct player, the issue of **controller collisions** was resolved.
+Now, **controller interactions** are only reflected on the player who owns the controller, and all players can see consistent behavior across the network.
 
 
 ## 📄 Documents
