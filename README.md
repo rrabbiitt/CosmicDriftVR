@@ -252,7 +252,7 @@ Now, **controller interactions** are only reflected on the player who owns the c
 
 
 ## 📄 Documents
-- [Technical Report](./CosmicDriftVR_PDF/CosmicDriftVR_기술보고서.pdf)
+- [Technical Documentation](./CosmicDriftVR_PDF/CosmicDriftVR_기술보고서.pdf)
 
 ## 🎮 In-Game Trailer Footage
 [![InGame Video](https://img.youtube.com/vi/JnEQsDqwAv0/0.jpg)](https://youtu.be/JnEQsDqwAv0)
